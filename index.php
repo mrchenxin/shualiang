@@ -5,7 +5,7 @@ require("common.php");
 $dir = __DIR__;
 $date = date("Ymd");
 
-/*for ($i=1; $i <= 700; $i++) { 
+for ($i=1; $i <= 700; $i++) { 
 	$html = get_html("https://www.xicidaili.com/nt/{$i}");
 	$doc = phpQuery::newDocumentHtml($html);
 	foreach (phpQuery::pq("#ip_list tr") as $k => $v) {
@@ -15,7 +15,7 @@ $date = date("Ymd");
 		$ip = str_replace(' ','',$str_arr[1]).":".str_replace(' ','',$str_arr[2]);
 		file_put_contents($dir."/ip{$date}.log", $ip."\r\n",FILE_APPEND);
 	}
-}*/
+}
 
 for ($i=1; $i <= 2000; $i++) { 
 	$html = get_html("https://www.kuaidaili.com/free/inha/{$i}/");

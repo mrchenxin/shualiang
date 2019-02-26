@@ -11,13 +11,14 @@ $dir = __DIR__;
 $date = date("Ymd");
 $ip_file = $dir."/ip{$date}.log";
 $sort = isset($argv[0])?$argv[0]:'';
-$file = isset($argv[1])?$argv[1]:'';
-if ($file) {
-	$ip_file .= $file;
-}
+$begin = isset($argv[1])?(int)$argv[1]:0;
 
 $ips = file_get_contents($ip_file);
 $ips_arr = explode("\r\n", $ips);
+
+if ($begin) {
+	$ips_arr = array_slice($ips_arr,$begin);
+}
 if ($sort && $sort=="desc") {
         $ips_arr = array_reverse($ips_arr);
 }
