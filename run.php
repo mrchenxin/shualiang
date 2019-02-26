@@ -10,8 +10,8 @@ require("common.php");
 $dir = __DIR__;
 $date = date("Ymd");
 $ip_file = $dir."/ip{$date}.log";
-$sort = isset($argv[0])?$argv[0]:'';
-$begin = isset($argv[1])?(int)$argv[1]:0;
+$sort = isset($argv[1])?$argv[1]:'';
+$begin = isset($argv[2])?(int)$argv[2]:0;
 
 $ips = file_get_contents($ip_file);
 $ips_arr = explode("\r\n", $ips);
